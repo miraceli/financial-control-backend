@@ -34,7 +34,7 @@ class Account(models.Model):
 
 class Cash(models.Model):
     name = models.CharField(max_length=50)
-    valueReceivable = models.DecimalField(max_digits=10,decimal_places=2)
+    valueReceivable = models.DecimalField(max_digits=8, decimal_places=2)
     dateReceivable = models.DateField(default=date.today)
     income = models.ForeignKey(Income, on_delete=models.CASCADE)
     def __str__(self):
@@ -42,7 +42,7 @@ class Cash(models.Model):
 
 class Cost(models.Model):
     name = models.CharField(max_length=50)
-    valuePayable = models.DecimalField(max_digits=10,decimal_places=2)
+    valuePayable = models.DecimalField(max_digits=8, decimal_places=2)
     datePayable = models.DateField(default=date.today)
     expense = models.ForeignKey(Expense, on_delete=models.CASCADE)
     def __str__(self):
